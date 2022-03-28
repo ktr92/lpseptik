@@ -1,0 +1,3 @@
+$(document).on('click',"#tags_mulitupload",function(){$(".tags_mulitupload").toggle();return false;});$('.tags_mulitupload form').submit(function(){$('.tags_mulitupload .error').hide();$(this).ajaxSubmit({url:window.location.href,type:'POST',dataType:'json',success:(function(response,statusText,xhr,form){if(response.hash){$('input[name=check_hash_user]').val(response.hash);$('.check_hash_user').text(response.hash);}
+if(response.error){$('.tags_mulitupload .error').show().html(prepare(response.error));}
+if(response.redirect){window.location=response.redirect;}})});return false;});

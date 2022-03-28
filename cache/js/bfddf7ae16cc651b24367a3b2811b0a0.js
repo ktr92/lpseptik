@@ -1,0 +1,1 @@
+$('input[name=cat]').attr("rel",$('input[name=cat]').attr("rel")+',#rating_cat');
